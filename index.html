@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <title>フロッガー</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="score">スコア: <span id="score">0</span></div>
+            <div class="lives">ライフ: <span id="lives">3</span></div>
+            <div class="level">レベル: <span id="level">1</span></div>
+            <div class="time">時間: <span id="time">60</span></div>
+        </div>
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div class="game-controls">
+            <p class="desktop-controls">矢印キーで移動、スペースキーで一時停止</p>
+            <div class="mobile-controls">
+                <div class="control-buttons">
+                    <div class="button-row">
+                        <button id="upBtn" class="control-btn up-btn">↑</button>
+                    </div>
+                    <div class="button-row">
+                        <button id="leftBtn" class="control-btn left-btn">←</button>
+                        <button id="pauseBtn" class="control-btn pause-btn">⏸</button>
+                        <button id="rightBtn" class="control-btn right-btn">→</button>
+                    </div>
+                    <div class="button-row">
+                        <button id="downBtn" class="control-btn down-btn">↓</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gameOverScreen" class="game-over-screen hidden">
+            <h2>ゲームオーバー</h2>
+            <p>最終スコア: <span id="finalScore">0</span></p>
+            <button id="restartButton">もう一度プレイ</button>
+        </div>
+        <div id="gameWinScreen" class="game-win-screen hidden">
+            <h2>ステージクリア！</h2>
+            <p>スコア: <span id="winScore">0</span></p>
+            <button id="nextLevelButton">次のレベル</button>
+        </div>
+    </div>
+
+    <script src="js/player.js"></script>
+    <script src="js/obstacles.js"></script>
+    <script src="js/collision.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

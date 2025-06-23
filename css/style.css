@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.game-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: center;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #34495e;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.game-header > div {
+    flex: 1;
+}
+
+#gameCanvas {
+    border: 3px solid #2c3e50;
+    border-radius: 5px;
+    background: #e8f8f5;
+    display: block;
+    margin: 0 auto;
+}
+
+.game-controls {
+    margin-top: 15px;
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.game-over-screen,
+.game-win-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    z-index: 1000;
+}
+
+.game-over-screen h2 {
+    color: #e74c3c;
+    margin-bottom: 15px;
+}
+
+.game-win-screen h2 {
+    color: #27ae60;
+    margin-bottom: 15px;
+}
+
+.game-over-screen p,
+.game-win-screen p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+.hidden {
+    display: none;
+}
+
+/* モバイル用コントロール */
+.mobile-controls {
+    display: none;
+    margin-top: 15px;
+}
+
+.control-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.control-btn {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    background: #3498db;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.control-btn:hover {
+    background: #2980b9;
+    transform: scale(1.05);
+}
+
+.control-btn:active {
+    background: #1f618d;
+    transform: scale(0.95);
+}
+
+.pause-btn {
+    background: #e67e22;
+}
+
+.pause-btn:hover {
+    background: #d35400;
+}
+
+.pause-btn:active {
+    background: #a93e00;
+}
+
+.desktop-controls {
+    display: block;
+}
+
+/* モバイル対応 */
+@media (max-width: 900px) {
+    .game-container {
+        padding: 10px;
+        max-width: 100vw;
+    }
+    
+    #gameCanvas {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .game-header {
+        flex-direction: column;
+        gap: 5px;
+        font-size: 14px;
+    }
+    
+    .game-header > div {
+        flex: none;
+    }
+    
+    .desktop-controls {
+        display: none;
+    }
+    
+    .mobile-controls {
+        display: block;
+    }
+}
+
+@media (max-width: 500px) {
+    .game-container {
+        padding: 5px;
+    }
+    
+    .control-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .game-header {
+        font-size: 12px;
+    }
+}
